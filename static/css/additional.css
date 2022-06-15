@@ -1,0 +1,27 @@
+.pricing
+{
+	min-height: calc(100vh - 62px);
+}
+.price-head
+{
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+#pricing-container {
+  margin-bottom: 100px;
+}
+
+#pricing-container .price-card {
+      border: 1px solid white;
+}
+
+#pricing-container .price-card {
+  background-color: #011239;
+}
+.price-subscribe .btn
+{
+    border: 1px solid #F9720F;
+    margin-top: 14px !important;
+    color: #fff;
+    font-size: 16px;
+}

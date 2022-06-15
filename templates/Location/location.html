@@ -1,0 +1,157 @@
+{% extends 'components/layout.html' %}
+{% load static %}
+
+{% block head %}
+
+<head>
+    <meta charset="utf-8" />
+    <title>RAREERAM | LOCATION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{% static '/images/favicon.ico' %}">
+
+    <!-- Plugins css -->
+    <link href="{% static '/libs/bootstrap-tagsinput/bootstrap-tagsinput.css' %}" rel="stylesheet" />
+    <link href="{% static '/libs/select2/select2.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/libs/multiselect/multi-select.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/libs/flatpickr/flatpickr.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css' %}" rel="stylesheet"
+        type="text/css" />
+    <link href="{% static '/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css' %}" rel="stylesheet"
+        type="text/css" />
+
+    <!-- App css -->
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/css/app.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <style>
+        .btn-accent {
+            background-color: #E31B87 !important;
+            color: #e2e7f1 !important;
+            padding: 5px 20px;
+        }
+
+        .rar_field {
+            border: 1px solid #020001;
+            border-radius: 4px;
+            width: 100%;
+            height: 30px;
+            padding: 4px 7px;
+        }
+
+        label {
+            margin-top: 17px;
+
+        }
+        .rar_field:focus {
+            border-color:  #E31B87 !important;
+            border: 1px solid #E31B87 ;
+        }
+    </style>
+
+</head>
+{% endblock head %}
+
+
+{% block content %}
+
+<!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <div class="row page-title">
+                <div class="col-md-12">
+                    <h4 class="mb-1 mt-0">Manage Location</h4>
+
+                </div>
+            </div>
+            <!-- basic form  -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="row">
+                                    <div class="col-md-6"><label class="font-weight-bold text-muted ">Employee Name
+                                        </label>
+
+                                        <select data-plugin="customselect " class="form-control rar_field">
+                                            <option value="0"></option>
+                                            <option value="1"></option>
+
+                                            <!-- <option value="3" disabled>Disabled</option> -->
+
+                                        </select>
+                                    </div>
+
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div><label class="font-weight-bold text-muted">View Location
+                                        </label>
+
+                                        
+
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6"></div>
+                                
+                            </div>
+
+                            <br>
+                            <div style="height: 400px;">
+                                <iframe style="width: 100%; height: 100%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30703867.0716799!2d64.40183608457191!3d20.049158955693073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1653022801323!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+
+
+                     
+
+                        </div> 
+                    </div>
+
+                    <!-- ============================================================== -->
+                    <!-- End Page content -->
+                    <!-- ============================================================== -->
+
+                    {% endblock content %}
+
+
+
+                    {% block script %}
+                    <!-- Vendor js -->
+                    <script src="{% static '/js/vendor.min.js' %}"></script>
+
+                    <!-- Plugins Js -->
+                    <script src="{% static '/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js' %}"></script>
+                    <script src="{% static '/libs/select2/select2.min.js' %}"></script>
+                    <script src="{% static '/libs/multiselect/jquery.multi-select.js' %}"></script>
+                    <script src="{% static '/libs/flatpickr/flatpickr.min.js' %}"></script>
+                    <script src="{% static '/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js' %}"></script>
+                    <script src="{% static '/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js' %}"></script>
+
+                    <!-- Init js-->
+                    <script src="{% static '/js/pages/form-advanced.init.js' %}"></script>
+
+                    <!-- App js -->
+                    <script src="{% static '/js/app.min.js' %}"></script>
+                    {% endblock script %}
+
+
+
+
+                    </body>
+
+                    </html>

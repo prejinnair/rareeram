@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<style>
+    .errorlist {
+        color: red;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .success {
+        color: #03c900;
+    }
+</style>
+{% block head %}
+
+{% endblock head %}
+
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+
+        <!-- Topbar Start -->
+        <div class="navbar navbar-expand flex-column flex-md-row navbar-custom" style="height: 84px;">
+            <div class="container-fluid">
+                <!-- LOGO -->
+                <div class="">
+                    <a href="#" class="navbar-brand mr-0 mr-md-2 logo">
+                        <span class="logo-lg">
+                            <img src="{% static '/images/rareeram.jpeg' %}" alt="" height="40" /><img
+                                src="{% static '/images/rareeram.jpeg' }" alt="" height="28">
+                            <!-- <span class="d-inline h5 ml-1 text-logo">RAREERAM</span> -->
+                        </span>
+                        <span class="logo-sm">
+                            <img src="{% static '/images/rareeram.jpg' }" alt="" height="28">
+                        </span>
+                    </a>
+                </div>
+                <!-- <div style="display: flex;">
+                    <span style="margin-right: 30px;">
+                        <div class="">
+                            <label>Select Location</label><br>
+                            <select style="width: 100%;" name="" id="" class="pb-1">
+                                <option value="">All</option>
+                                <option value="">West Worannes</option>
+                                <option value="">West Worannes</option>
+
+                            </select>
+                        </div>
+                    </span>
+                    <div class="">
+                        <label>Select Care Taker</label>
+                        <br><select style="width: 100%;" name="" id="" class="pb-1">
+                            <option value=""></option>
+                            <option value="">Nico Jones</option>
+                            <option value="">Nico Jones</option>
+
+                        </select>
+                    </div>
+                </div> -->
+            </div>
+
+            <ul class="navbar-nav bd-navbar-nav flex-row list-unstyled menu-left mb-0">
+                <li class="">
+                    <button class="button-menu-mobile open-left disable-btn">
+                        <i data-feather="menu" class="menu-icon"></i>
+                        <i data-feather="x" class="close-icon"></i>
+                    </button>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-right mb-0">
+                <li class="d-none d-sm-block">
+                    <div class="app-search">
+                        <form>
+                            <!-- <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search...">
+                                        <span data-feather="search"></span>
+                                    </div> -->
+                        </form>
+                    </div>
+                </li>
+
+                <li class="dropdown d-none d-lg-block" data-toggle="tooltip" data-placement="left"
+                    title="Change language">
+                    <!--                            <a class="nav-link dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button"-->
+                    <!--                                aria-haspopup="false" aria-expanded="false">-->
+                    <!--                                <i data-feather="globe"></i>-->
+                    <!--                            </a>-->
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="{% static '/images/flags/germany.jpg' %}" alt="user-image" class="mr-2"
+                                height="12"> <span class="align-middle">German</span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="{% static '/images/flags/italy.jpg' %}" alt="user-image" class="mr-2" height="12">
+                            <span class="align-middle">Italian</span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="{% static '/images/flags/spain.jpg' %}" alt="user-image" class="mr-2" height="12">
+                            <span class="align-middle">Spanish</span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="{% static '/images/flags/russia.jpg' %}" alt="user-image" class="mr-2"
+                                height="12"> <span class="align-middle">Russian</span>
+                        </a>
+                    </div>
+                </li>
+
+
+                
+
+                <li class="dropdown notification-list align-self-center profile-dropdown">
+                    <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="false" aria-expanded="false">
+                        <div class="media user-profile ">
+                            <img src="{% static '/images/users/admin.jpg.jpg' %}" alt="user-image"
+                                class="rounded-circle align-self-center" />
+                            <div class="media-body text-left">
+                                <!-- <h6 class="pro-user-name ml-2 my-0">
+                                  
+                                    <span class="pro-user-desc text-muted d-block mt-1">Administrator </span>
+                                </h6> -->
+                            </div>
+                            <span data-feather="chevron-down" class="ml-2 align-self-center"></span>
+                        </div>
+                    </a>
+                    
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- end Topbar -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <div class="left-side-menu">
+        <div class="media user-profile mt-2 mb-2">
+            <img src="{% static '/images/admin.jpg' %}" class="avatar-sm rounded-circle mr-2" alt="Shreyu" />
+            <img src="{% static '/images/users/avatar-7.jpg' %}" class="avatar-xs rounded-circle mr-2" alt="Shreyu" />
+
+            <div class="media-body">
+                <!-- <h6 class="pro-user-name mt-0 mb-0">RAREERAM</h6> -->
+                <h6 class="pro-user-desc">Administrator</h6>
+            </div>
+            
+        </div>
+        <div class="sidebar-content">
+            <!--- Sidemenu -->
+            <div id="sidebar-menu" class="slimscroll-menu">
+                <ul class="metismenu" id="menu-bar">
+                    <!--                            <li class="menu-title">Navigation</li>-->
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Dashboard </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        
+                    </li>
+                    
+                    <li class="menu-title">Apps</li>
+                    
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Manage Users </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="{% url 'listdealer' %}">Views Dealer </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'listsalesagent' %}">Views SalesAgent</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Categories </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="{% url 'addcat' %}">Add Categories</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'listcat' %}">List Categories</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Products </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="{% url 'addproduct' %}">Add Products</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'listproduct' %}">Views Products</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> ManageOrders </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="{% url 'addorder' %}">Add Orders</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'listorder' %}">Views Orders</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Add SliderImage </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="#">Add SliderImage</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i data-feather="inbox"></i>
+                            <span> Manage Employee </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="#">View Employee Location</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                                   
+                </ul>
+            </div>
+            <!-- End Sidebar -->
+
+            <div class="clearfix"></div>
+        </div>
+        <!-- Sidebar -left -->
+
+    </div>
+
+    <div id="myModal" class="modal" style="position:absolute;top:0;z-index:100;">
+
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    {% block content %}
+    {% endblock content %}
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Right Sidebar -->
+    <div class="right-bar">
+        <div class="rightbar-title">
+            <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                <i data-feather="x-circle"></i>
+            </a>
+            <h5 class="m-0">Customization</h5>
+        </div>
+
+        <div class="slimscroll-menu">
+
+            <h5 class="font-size-16 pl-3 mt-4">Choose Variation</h5>
+            <div class="p-3">
+                <h6>Default</h6>
+                <a href="index.html"><img src="{% static '/images/layouts/vertical.jpg' %}" alt="vertical"
+                        class="img-thumbnail demo-img" /></a>
+            </div>
+            <div class="px-3 py-1">
+                <h6>Top Nav</h6>
+                <a href="layouts-horizontal.html"><img src="{% static '/images/layouts/horizontal.jpg'%}"
+                        alt="horizontal" class="img-thumbnail demo-img" /></a>
+            </div>
+            <div class="px-3 py-1">
+                <h6>Dark Side Nav</h6>
+                <a href="layouts-dark-sidebar.html"><img src="{% static '/images/layouts/vertical-dark-sidebar.jpg' %}"
+                        alt="dark sidenav" class="img-thumbnail demo-img" /></a>
+            </div>
+            <div class="px-3 py-1">
+                <h6>Condensed Side Nav</h6>
+                <a href="layouts-dark-sidebar.html"><img src="{% static '/images/layouts/vertical-condensed.jpg' %}"
+                        alt="condensed" class="img-thumbnail demo-img" /></a>
+            </div>
+            <div class="px-3 py-1">
+                <h6>Fixed Width (Boxed)</h6>
+                <a href="layouts-boxed.html"><img src="{% static '/images/layouts/boxed.jpg' %}" alt="boxed"
+                        class="img-thumbnail demo-img" /></a>
+            </div>
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+
+    {% block script %}
+    {% endblock script %}
+
+</body>
+
+</html>

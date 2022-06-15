@@ -1,0 +1,69 @@
+.main .landing-block .cards {
+    padding: 0px;
+    text-align: left;
+    margin-bottom: 30px;
+    background: #fafafa;
+    border: 0px solid;
+    display: flex;
+    height: 89%;
+}
+.main .landing-block .cards h4 {
+    padding: 0px;
+    margin-bottom: 12px;
+}
+.dashboard-content .roll-permission .cards
+{
+	background: white;
+    padding: 23px 12px;
+}
+.dashboard-content .roll-permission .cards .reports ul li span
+{
+    margin-right: 75px;
+}
+.dashboard-content .roll-permission .cards .reports ul li
+{
+border-bottom: 1px solid grey;
+    padding: 11px 4px;
+    font-size: 12px;
+}
+.card-content
+{
+	padding: 26px 23px;
+}
+.card-pic
+{
+	padding: 34px 2px;
+}
+
+
+.detail-model
+{
+    background-color: lightgrey !important;
+}
+.portfolio-block .modeltype_slider .slick-slide {
+  padding: 0 10px;
+}
+.portfolio-block .modeltype_slider .slick-next, .portfolio-block .modeltype_slider .slick-prev {
+  width: 24px;
+  height: 31px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  font-size: 0;
+}
+.portfolio-block .modeltype_slider .slick-next:before, .portfolio-block .modeltype_slider .slick-prev:before {
+  display: none;
+}
+.portfolio-block .modeltype_slider .slick-next {
+  right: -20px;
+  background-image: url(../images/right-slider-arrow.png);
+}
+.portfolio-block .modeltype_slider .slick-prev {
+  left: -20px;
+  background-image: url(../images/left-slider-arrow.png);
+}
+space 
+{
+margin-left: 5px;
+}
+

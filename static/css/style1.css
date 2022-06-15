@@ -1,0 +1,27 @@
+.mainn
+{
+	padding: 0px;
+	margin: 0px;
+	color: white;
+	background-color: red;
+    float: left;
+}
+.mainn .main1 h1
+{
+	color: #000;
+	font-size: 26px;
+}
+.mainn .main2 h4
+{
+	color: yellow;
+	font-size: 16px;
+}
+.main1
+{
+	float: left;
+}
+.main2
+{
+	float: left;
+	background-color: green;
+}

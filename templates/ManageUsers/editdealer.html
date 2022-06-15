@@ -1,0 +1,265 @@
+{% extends 'components/layout.html' %}
+{% load static %}
+
+{% block head %}
+
+<head>
+    <meta charset="utf-8" />
+    <title>RAREERAM | EDIT DEALER </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{% static '/images/favicon.ico' %}">
+
+    <!-- plugin css -->
+    <link href="{% static '/libs/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/libs/datatables/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/libs/datatables/buttons.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/libs/datatables/select.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- App css -->
+    <!-- <link href="{% static '/css/app.css' %}" rel="stylesheet" type="text/css" /> -->
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/css/app.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <style>
+        .btn-accent {
+            background-color: #E31B87 !important;
+            color: #e2e7f1 !important;
+            padding: 5px 20px;
+        }
+
+        .rar_field {
+            border: 1px solid #14010b;
+            border-radius: 4px;
+            width: 100%;
+            height: 30px;
+            padding: 4px 7px;
+        }
+
+        label {
+            margin-top: 17px;
+
+        }
+
+        .rar_field:focus {
+            border-color: #E31B87 !important;
+            border: 1px solid #E31B87;
+        }
+    </style>
+
+</head>
+{% endblock head %}
+
+{% block content %}
+<!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+
+<form class="form-horizontal" enctype="multipart/form-data" method="post" action="{% url 'editdealer' pk %}"
+    novalidate>
+    <div class="content-page">
+        <div class="content">
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <div class="row page-title">
+                    <div class="col-md-12">
+                        {% if messages %}
+                        {% for message in messages %}
+
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ message }}
+                        </div>
+
+                        {% endfor %}
+                        {% endif %}
+                        <h4 class="mb-1 mt-0">Update dealer</h4>
+
+                    </div>
+                </div>
+
+                <!-- basic form  -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title mb-4">DEALER Details</h4>
+                                <!--                                <h6 class="header-title mb-4">username : <span style="color:gray;font-weight:400;">{{user.username}}</span>-->
+                                <!--                                </h6>-->
+                                <!--                                <h6 class="header-title mb-4">email : <span style="color:gray;font-weight:400;">{{user.email}}</span>-->
+                                <!--                                </h6>-->
+
+
+                                <div class="row">
+
+                                    {% csrf_token %}
+
+
+                                    {% for field in dealerform %}
+                                    <div class="col-6">
+
+
+                                        <div class="form-group">
+                                            <label>{{ field.label_tag }}</label>
+                                            {{field}}
+
+                                            <small class="form-text text-muted"> {{ field.errors }}</small>
+                                        </div>
+                                    </div>
+
+
+                                    {% endfor %}
+
+                                    <!--                                    {% for field in addinfo_form %}-->
+                                    <!--                                    <div class="col-6">-->
+
+
+                                    <!--                                        <div class="form-group">-->
+                                    <!--                                            <label>{{ field.label_tag }}</label>-->
+                                    <!--                                            {{field}}-->
+
+                                    <!--                                            <small class="form-text text-muted"> {{ field.errors }}</small>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+
+
+                                    <!--                                    {% endfor %}-->
+
+
+
+
+                                </div> <!-- end card-body -->
+                            </div> <!-- end card-->
+                        </div><!-- end col -->
+                    </div>
+
+
+                </div> <!-- container-fluid -->
+
+            </div>
+
+            <!-- content -->
+            <div class="content">
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    <div class="row page-title">
+                        <div class="col-md-12">
+
+                        </div>
+                    </div>
+                    <!-- basic form  -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="header-title mb-4"> Address Information</h4>
+
+
+                                    <form class="form-horizontal">
+                                        <div class="row">
+                                            {% if addressform %}
+                                            {% csrf_token %}
+                                            {% for field in addressform %}
+                                            <div class="col-6">
+
+                                                <div class="form-group">
+                                                    <label>{{ field.label_tag }}</label>
+                                                    {{field}}
+
+                                                    <small class="form-text text-muted"> {{ field.errors }}</small>
+                                                </div>
+                                            </div>
+
+
+                                            {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </form>
+
+                                </div> <!-- end card-body -->
+                            </div> <!-- end card-->
+                        </div><!-- end col -->
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary" style="float:right;">Submit</button>
+                </div> <!-- container-fluid -->
+
+
+                <!-- <div class="row">
+                    <div class="col-md-12 text-center">
+
+
+                        <a class="btn btn-accent">Submit</a>
+                    </div>
+                </div> -->
+            </div>
+
+            <br>
+        </div>
+    </div>
+</form>
+
+
+</div>
+<!-- end card body-->
+</div> <!-- end card -->
+</div><!-- end col-->
+</div>
+<!-- end row-->
+
+</div> <!-- container-fluid -->
+
+</div> <!-- content -->
+
+
+
+<!-- Footer Start -->
+<!--                <footer class="footer">-->
+<!--                    <div class="container-fluid">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-12">-->
+<!--                                2019 &copy; Shreyu. All Rights Reserved. Crafted with <i class='uil uil-heart text-danger font-size-12'></i> by <a href="https://coderthemes.com" target="_blank">Coderthemes</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </footer>-->
+<!-- end Footer -->
+
+</div>
+
+<!-- ============================================================== -->
+<!-- End Page content -->
+<!-- ============================================================== -->
+{% endblock content %}
+
+
+{% block script %}
+<!-- Vendor js -->
+<script src="{% static '/js/vendor.min.js' %}"></script>
+
+<!-- datatable js -->
+<script src="{% static '/libs/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static '/libs/datatables/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static '/libs/datatables/dataTables.responsive.min.js' %}"></script>
+<script src="{% static '/libs/datatables/responsive.bootstrap4.min.js' %}"></script>
+
+<script src="{% static '/libs/datatables/dataTables.buttons.min.js' %}"></script>
+<script src="{% static '/libs/datatables/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static '/libs/datatables/buttons.html5.min.js' %}"></script>
+<script src="{% static '/libs/datatables/buttons.flash.min.js' %}"></script>
+<script src="{% static '/libs/datatables/buttons.print.min.js' %}"></script>
+
+<script src="{% static '/libs/datatables/dataTables.keyTable.min.js' %}"></script>
+<script src="{% static '/libs/datatables/dataTables.select.min.js' %}"></script>
+
+<!-- Datatables init -->
+<script src="{% static '/js/pages/datatables.init.js' %}"></script>
+
+<!-- App js -->
+<script src="{% static '/js/app.min.js' %}"></script>
+{% endblock script %}

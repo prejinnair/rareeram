@@ -1,0 +1,327 @@
+{% extends 'components/layout.html' %}
+{% load static %}
+
+{% block head %}
+
+<head>
+    <meta charset="utf-8" />
+    <title>RAREERAM | Add Rareeram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{% static '/images/favicon.ico' %}">
+
+    <!-- Plugins css -->
+    <link href="{% static '/libs/bootstrap-tagsinput/bootstrap-tagsinput.css' %}" rel="stylesheet" />
+    <link href="{% static '/libs/select2/select2.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/libs/multiselect/multi-select.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/libs/flatpickr/flatpickr.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css' %}" rel="stylesheet"
+        type="text/css" />
+    <link href="{% static '/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css' %}" rel="stylesheet"
+        type="text/css" />
+
+    <!-- App css -->
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '/css/app.min.css' %}" rel="stylesheet" type="text/css" />
+
+
+
+    <style>
+        .btn-accent {
+            background-color: #E31B87 !important;
+            color: #e2e7f1 !important;
+            padding: 5px 20px;
+        }
+
+        .rar_field {
+            border: 1px solid #13010a;
+            border-radius: 4px;
+            width: 100%;
+            height: 30px;
+            padding: 4px 7px;
+        }
+
+        .rar_field:focus {
+            border-color: #E31B87 !important;
+            border: 1px solid #E31B87;
+        }
+
+        label {
+            margin-top: 17px;
+
+        }
+    </style>
+</head>
+{% endblock head %}
+
+
+{% block content %}
+
+<!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <div class="row page-title">
+                <div class="col-md-12">
+                    <!--                                <nav aria-label="breadcrumb" class="float-right mt-1">-->
+                    <!--                                    <ol class="breadcrumb">-->
+                    <!--                                        <li class="breadcrumb-item"><a href="#">Shreyu</a></li>-->
+                    <!--                                        <li class="breadcrumb-item"><a href="#">Forms</a></li>-->
+                    <!--                                        <li class="breadcrumb-item active" aria-current="page">Advanced</li>-->
+                    <!--                                    </ol>-->
+                    <!--                                </nav>-->
+                    <!--                                <button onclick="window.location.href='#'" type="button" class="btn btn-danger mr-4 mb-3  mb-sm-0 float-right" ><i class="uil-plus mr-1"></i>Add </button>-->
+
+                    <h4 class="mb-1 mt-0">Add Product</h4>
+
+                </div>
+            </div>
+            <!-- basic form  -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+
+                                    <div><label class="font-weight-bold text-muted">Product
+                                            Name</label>
+                                        <div class=" css-2b097c-container">
+                                            <!--  -->
+                                            <div class=" css-yk16xz-control">
+                                                <div class=" css-1hwfws3">
+
+                                                    <input type="text" class="form-control form-control-sm rar_field"
+                                                        name="" width="150px" value="">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div><label class="font-weight-bold text-muted">Category Name
+                                        </label>
+
+                                        <select data-plugin="customselect " class="form-control rar_field">
+                                            <option value="0"></option>
+                                            <option value="1"></option>
+
+                                            <!-- <option value="3" disabled>Disabled</option> -->
+
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+
+                                </div>
+
+
+                                <br>
+
+                                <div class="col-md-4">
+                                    <div><label class="font-weight-bold text-muted">Product Image
+                                        </label>
+                                        <form action="">
+                                            <input type="file" id="myFile" name="filename">
+
+                                        </form>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                                <div style="display: flex;">
+
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="col-md-4">
+
+                            </div>
+
+                            <br><br>
+                            <h5>Attribute</h5>
+                            <div class="row">
+
+                                <div class="col-md-2">
+
+                                    <div>
+                                        <label class="font-weight-bold text-muted">Color:
+                                        </label>
+                                        <select data-plugin="customselect " class="form-control rar_field">
+                                            <option value="0"></option>
+                                            <option value="1"></option>
+                                        </select>
+
+                                    </div>
+                                    <br>
+
+
+
+                                </div>
+                                <div class="col-md-2"> </div>
+                                <div class="col-md-2"> </div>
+                                <div class="col-md-2">
+
+
+                                    <!-- <div class="col-md-2"> -->
+                                    <div>
+                                        <label class="font-weight-bold text-muted">Size:
+                                        </label><select data-plugin="customselect " class="form-control rar_field">
+                                            <option value="0"></option>
+                                            <option value="1"></option>
+
+                                            <!-- <option value="3" disabled>Disabled</option> -->
+
+                                        </select>
+
+                                    </div>
+                                    <div>
+                                        <label class="font-weight-bold text-muted">Prize 1:
+                                        </label><input type="text" class="form-control form-control-sm rar_field"
+                                            name="" value="">
+
+                                    </div>
+                                    <div>
+                                        <label class="font-weight-bold text-muted">Prize 2:
+                                        </label><input type="text" class="form-control form-control-sm rar_field"
+                                            name="" value="">
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <br>
+
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-8">
+
+                            <div><label class="font-weight-bold text-muted">Description
+
+                                </label>
+                                <div class=" css-2b097c-container">
+
+                                    <div class=" css-yk16xz-control">
+                                        <div class=" css-1hwfws3">
+
+                                            <textarea rows="5" input type="text"
+                                                class="form-control form-control-sm rar_field" name="" width="150px"
+                                                value=""></textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <br>
+                        <br>
+
+                   
+
+
+                    <div class="row">
+                        <div class="col-md-8 text-center">
+
+
+                            <a class="btn btn-accent">Submit</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                </div>
+                <!-- <div class="row">
+                            <div class="col-md-12 text-center">
+
+
+                                <a class="btn btn-accent">Submit</a>
+                            </div>
+                        </div> -->
+
+
+            </div>
+            <!-- content -->
+
+
+
+            <!-- Footer Start -->
+            <!--                <footer class="footer">-->
+            <!--                    <div class="container-fluid">-->
+            <!--                        <div class="row">-->
+            <!--                            <div class="col-12">-->
+            <!--                                2019 &copy; Shreyu. All Rights Reserved. Crafted with <i class='uil uil-heart text-danger font-size-12'></i> by <a href="https://coderthemes.com" target="_blank">Coderthemes</a>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </footer>-->
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+        {% endblock content %}
+
+
+
+        {% block script %}
+        <!-- Vendor js -->
+        <script src="{% static '/js/vendor.min.js' %}"></script>
+
+        <!-- Plugins Js -->
+        <script src="{% static '/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js' %}"></script>
+        <script src="{% static '/libs/select2/select2.min.js' %}"></script>
+        <script src="{% static '/libs/multiselect/jquery.multi-select.js' %}"></script>
+        <script src="{% static '/libs/flatpickr/flatpickr.min.js' %}"></script>
+        <script src="{% static '/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js' %}"></script>
+        <script src="{% static '/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js' %}"></script>
+
+        <!-- Init js-->
+        <script src="{% static '/js/pages/form-advanced.init.js' %}"></script>
+
+        <!-- App js -->
+        <script src="{% static '/js/app.min.js' %}"></script>
+        {% endblock script %}
+
+
+
+
+        </body>
+
+        </html>
