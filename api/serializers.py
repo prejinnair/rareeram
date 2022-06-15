@@ -144,7 +144,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         employee.dealer_image=validated_data.pop('dealer_image')
         user.save()
         employee.save()
-#####git
+
  
 
         return user
