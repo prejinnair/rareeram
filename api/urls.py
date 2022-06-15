@@ -1,25 +1,25 @@
 from django.conf.urls.static import static
 from fcm_django.api.rest_framework import FCMDeviceAuthorizedViewSet
-
+from knox import views as knox_views
 from Rareeram import settings
 from . import views
-from .views import LoginView
+from api.views import *
 from django.urls import path
 from rest_framework_simplejwt import views as jwt_views
-
+from django.contrib.auth import views as auth_views
 from rest_framework.routers import DefaultRouter
-
+from .serializers import *
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 router = DefaultRouter()
 urlpatterns = [
                 #   path('hello/', views.HelloView.as_view(), name='hello'),  # for testing
-                    path('login/', views.LoginView),   
+                  path('token/', CustomTokenObtainPairView.as_view(),name="token"),
                                  #   # path('token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
                 #   path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
-                  path('test-api/', views.testapi.as_view(), name='register'),  # for testing
-                path('register/dealer/', views.DealerRegisterView.as_view(), name='auth_register'),
+                #path('test-api/', views.testapi.as_view(), name='register'),  # for testing
+                path('register/dealer/', DealerRegisterView.as_view(), name='auth_register'),
                 #   path('register/scientist/', views.ScientistRegisterView.as_view(), name='auth_register'),
                 #   path('register/farmer/', views.FarmerRegisterView.as_view(), name='auth_register'),
                 #   path('zone/', views.ZoneView.as_view(), name='api_zone'),

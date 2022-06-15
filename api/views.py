@@ -1,4 +1,5 @@
 import json
+from urllib import response
 from django.shortcuts import render
 from fcm_django.models import FCMDevice
 from rest_framework.decorators import api_view
@@ -46,30 +47,39 @@ class testapi(APIView):
         }
         return Response(res)
 
-from .serializers import RegisterSerializer,LoginSerializer
+from .serializers import RegisterSerializer,CustomTokenObtainPairSerializer
 from rest_framework import permissions
 from rest_framework import views
 from rest_framework.response import Response
 from django.contrib.auth import authenticate, login
 
+# @csrf_exempt
+# class LoginView(APIView):
+#     # This view should be accessible also for unauthenticated users.
+#     permission_classes = (permissions.AllowAny,)
+#     @staticmethod
+   
+#     def post(self, request, format=None):
+#         serializer = LoginSerializer(data=self.request.data,context={ 'request': self.request })
+#         serializer.is_valid(raise_exception=True)
+#         user = serializer.validated_data['user']
+#         login(request, user)
+#         return Response( status=status.HTTP_202_ACCEPTED)
 
-@csrf_exempt
-class LoginView(views.APIView):
-    # This view should be accessible also for unauthenticated users.
-    permission_classes = (permissions.AllowAny,)
 
-    def post(self, request, format=None):
-        serializer = LoginSerializer(data=self.request.data,
-        context={ 'request': self.request })
-        serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
-        password=serializer.validated_data['password']
-        login(self,request, user)
-        return Response( status=status.HTTP_202_ACCEPTED)
+# class ObtainJSONWebToken(TokenObtainPairView):
+#     # Replace the serializer with your custom
+#     serializer_class = CustomJWTSerializer
+#     return response(CustomJWTSerializer.data)
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    # Replace the serializer with your custom
+    serializer_class = CustomTokenObtainPairSerializer
 
 
 ####-----DealerRegistration-----####
 from rest_framework.parsers import MultiPartParser, FormParser
+
 class DealerRegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
@@ -83,10 +93,19 @@ class DealerRegisterView(generics.CreateAPIView):
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         data = {
+            'user_type': request.data.get('user_type'),
             'username': request.data.get('username'),
+            "shop_name":request.data.get('shop_name'),
+
             'email': request.data.get('email'),
-            'phone': request.data.get('phone'),
-            'type': request.data.get('type'),
+            'mobile': request.data.get('phone'),
+            'address': request.data.get('address'),
+            'landmark': request.data.get('landmark'),
+            'area': request.data.get('area'),
+            'pincode': request.data.get('pincode'),
+
+
+
         }
         return Response(
             {'status_code': status.HTTP_201_CREATED, 'detail': 'You have successfully registered', 'data': data},

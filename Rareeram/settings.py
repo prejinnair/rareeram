@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'fcm_django',
+     'knox',
+     'rest_framework_jwt',
     
     
 ]
