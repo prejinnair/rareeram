@@ -68,16 +68,17 @@ class Dealers(models.Model):
     ]
 
     reg_dealer_id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE,default=None,null=True)
     name=models.CharField(max_length=150,unique=True,null=True)
     phone = models.CharField(max_length=70, default=None,null=True)
     email = models.EmailField(max_length=200,default=None,null=True)
     dealer_status=models.CharField(
         max_length=20,
         choices=STATUS,
-        default=ACTIVE,
+        default=INACTIVE,
     )
 
-    address_id=models.OneToOneField(Address,on_delete=models.CASCADE)
+    address_id=models.ForeignKey(Address,related_name="Address1",on_delete=models.CASCADE)
     dealer_image=models.ImageField(upload_to='dealer_images', blank=True, null=True)
     dealer_shopname=models.CharField(max_length=100,default=None,null=True)
     dealer_gst_no=models.CharField(max_length=200,default=None,null=True)
@@ -94,36 +95,35 @@ class Dealers(models.Model):
 #     salesagent_postalcode=models.CharField(max_length=150,unique=True,null=True)
   
 
-# class SalesAgent(models.Model):
-#     GENDER = (
-#         ('Male', 'Male'),
-#         ('Female', 'Female'),
-#     )
-#     ACTIVE = 'active'
-#     INACTIVE = 'in-active'
-#     DELETED = 'delete'
-#     STATUS = [
-#         (ACTIVE, 'active'),
-#         (INACTIVE, 'in-active'),
-#         (DELETED, 'deleted'),
-#     ]
+class SalesAgent(models.Model):
+    GENDER = (
+        ('Male', 'Male'),
+        ('Female', 'Female'),
+    )
+    ACTIVE = 'active'
+    INACTIVE = 'in-active'
+    DELETED = 'delete'
+    STATUS = [
+        (ACTIVE, 'active'),
+        (INACTIVE, 'in-active'),
+        (DELETED, 'deleted'),
+    ]
 
-#     reg_salesagent_id = models.AutoField(primary_key=True)
-#     salesagent_first_name=models.CharField(max_length=150,unique=True,null=True)
-#     salesagent_last_name=models.CharField(max_length=150,unique=True,null=True)
-#     salesagent_mobile_number=models.CharField(max_length=150,unique=True,null=True)
-#     salesagent_gender=models.CharField(max_length=150,choices=GENDER)
-#     salesagent_email = models.EmailField(max_length=200)
-#     salesagent_status=models.CharField(
-#         max_length=20,
-#         choices=STATUS,
-#         default=ACTIVE,
-#     )
+    reg_salesagent_id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE,default=None,null=True)
 
-#     salesagent_address_id=models.ForeignKey(SalesAddress,related_name='saddress',on_delete=models.CASCADE)
-#     salesagent_password=models.CharField(max_length=150,unique=True,null=True)
-#     salesagent_confirm_password=models.CharField(max_length=150,unique=True,null=True)
-    
+    name=models.CharField(max_length=150,unique=True,null=True)
+    phone=models.CharField(max_length=150,unique=True,null=True)
+    # salesagent_gender=models.CharField(max_length=150,choices=GENDER)
+    email = models.EmailField(max_length=200)
+    salesagent_status=models.CharField(
+        max_length=20,
+        choices=STATUS,
+        default=INACTIVE,
+    )
+
+    address_id=models.ForeignKey(Address,related_name='Address',on_delete=models.CASCADE)
+    salesagent_image=models.ImageField(upload_to='salesagent_images', blank=True, null=True)
 
 
 
